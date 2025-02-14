@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import OTPAuth from "otpauth";
+import * as OTPAuth from "otpauth"; // Changed from default import to namespace import
 import { QRCodeSVG } from "qrcode.react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
