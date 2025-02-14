@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import * as OTPAuth from "otpauth"; // Changed from default import to namespace import
+import * as OTPAuth from "otpauth";
 import { QRCodeSVG } from "qrcode.react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -90,12 +90,6 @@ const MFA = () => {
                             <p className="text-gray-600">Scan this QR code in Google Authenticator:</p>
                             <div className="bg-gray-100 p-8 rounded-lg inline-block">
                                 <QRCodeSVG value={otpURL} size={200} />
-                            </div>
-                            <div>
-                                <p className="text-gray-600 mb-2">Or enter this key manually:</p>
-                                <code className="bg-gray-100 px-4 py-2 rounded text-sm break-all">
-                                    {secret}
-                                </code>
                             </div>
 
                             <div className="space-y-4">
