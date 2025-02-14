@@ -26,16 +26,19 @@ const MFA = () => {
 
     const generateSecret = () => {
         try {
+            // Generate a random secret using the correct method
+            const randomSecret = new OTPAuth.Secret().base32;
+            
             const totp = new OTPAuth.TOTP({
                 issuer: "YourApp",
                 label: "user@example.com",
                 algorithm: "SHA1",
                 digits: 6,
                 period: 30,
-                secret: OTPAuth.Secret.generate(),
+                secret: randomSecret
             });
 
-            setSecret(totp.secret.base32);
+            setSecret(randomSecret);
             setOtpURL(totp.toString());
             setError(null);
         } catch (err) {
